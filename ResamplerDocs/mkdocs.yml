@@ -1,1 +1,9 @@
 site_name: Resampler Flags
+site_url: https://Lauren042.github.io/ResamplerDocs
+
+nav:
+    - Home: index.md
+    - About: about.md
+    - Moresampler: moresampler.md
+
+theme: readthedocs
