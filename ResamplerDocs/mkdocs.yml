@@ -5,5 +5,34 @@ nav:
     - Home: index.md
     - About: about.md
     - Moresampler: moresampler.md
+    - Flags: flags.md
 
-theme: readthedocs
+theme:
+    name: material
+    font:
+        text: Merriweather
+        code: IBM Plex Mono — Regular
+    palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle: 
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle: 
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+    features:
+    - navigation.tracking
+    - toc.integrate
+    
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
