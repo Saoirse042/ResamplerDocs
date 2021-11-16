@@ -5,7 +5,8 @@ nav:
     - Home: index.md
     - About: about.md
     - Moresampler: moresampler.md
-    - Flags: flags.md
+    - resampler.exe: flags.md
+    - Doppelter: doppelter.md
 
 theme:
     name: material
@@ -29,6 +30,8 @@ theme:
     - toc.integrate
     
 markdown_extensions:
+  - abbr
+  - pymdownx.snippets
   - pymdownx.arithmatex:
       generic: true
 
