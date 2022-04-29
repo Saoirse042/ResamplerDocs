@@ -2,8 +2,8 @@ site_name: Resampler Flags
 site_url: https://Lauren042.github.io/ResamplerDocs
 
 nav:
-    - Home: index.md
-    - About: about.md
+    - About: index.md
+    - Tools: tools.md
     - Moresampler: moresampler.md
     - resampler.exe: flags.md
     - Doppelter: doppelter.md
