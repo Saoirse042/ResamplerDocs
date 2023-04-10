@@ -11,7 +11,7 @@ Extensions:
 * [Tabbed](https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/)
 
 
-## laurens draft commands list because this website is a DRAFT
+## saoirse's lazy powershell commands list
 
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
@@ -19,11 +19,7 @@ Extensions:
 * `mkdocs -h` - Print help message and exit.
 * `mkdocs gh-deploy` - Commit (crimes).
 
-## table example that I can copy and paste from the md file
-| First Header | Second Header | Third Header |
-| ------------ | ------------- | ------------ |
-| Content Cell | Content Cell  | Content Cell |
-| Content Cell | Content Cell  | Content Cell |
+## file structure
 
     mkdocs.yml    # The configuration file.
     docs/

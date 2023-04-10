@@ -4,14 +4,16 @@ site_url: https://Lauren042.github.io/ResamplerDocs
 nav:
     - About: index.md
     - Tools: tools.md
-    - Moresampler: moresampler.md
     - resampler.exe: flags.md
     - Doppelter: doppelter.md
+    - Moresampler: moresampler.md
+    - tn_fnds.exe: tn_fnds.md
+
 
 theme:
     name: material
     font:
-        text: Merriweather
+        text: Roboto
         code: IBM Plex Mono — Regular
     palette:
     - media: "(prefers-color-scheme: light)"
@@ -31,12 +33,18 @@ theme:
     
 markdown_extensions:
   - abbr
-  - pymdownx.snippets
+  - admonition
+  - def_list
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 extra_javascript:
   - javascripts/mathjax.js

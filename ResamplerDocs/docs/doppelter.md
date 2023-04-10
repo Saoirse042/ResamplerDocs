@@ -1,12 +1,20 @@
 # Doppelter
+```
+-Some of this is translated with DeepL, and needs to be edited for clarity
+```
+>Ameya has been building the original UTAU resampler from scratch. <br>
+>Doppelter is multi-threaded, 64-bit compatible, and can even handle file formats other than `.wav`.
 
->Ameya has been building the original UTAU resampler from scratch.
-
->Doppleter is multi-thread and 64-bit compatible, and even utilises system PATH variables for audio decoders such as Ogg Vorbis or MP3.
 
 
 === "Standard flags"
-	g, B, N, P, t  flags are supported,
+	| Flag | Name             | Range      | Default | Description                                                                    |
+	|:----:|------------------|------------|:-------:|--------------------------------------------------------------------------------|
+	| g    | Gender           |`[-100-100]`| 0       | Positive values will deepen the voice, while negative ones will make it higher.|
+	| B    |                  |`[0-100]`   | 50      | Applies breathiness before synthesis, and is affected by other flags.          |
+	| N    | Formant on/off   |            |         | Toggles the formant filter on or off.                                          |
+	| P    | Peak compressor  |`[0-100]`   | 86      | Compresses the voice to make the volume more consistent.                       |
+	| t    | Pitch            |            | 0       | Shifts the pitch by a number of cents. 1 cent = 1/100th of a semitone.         |
 
 
 === "Unique flags"
@@ -17,20 +25,18 @@
 	|   S  | Number of threads By default, the number of threads corresponds to the number of logical cores on the computer.|
 	|   i  | length of the rear fixed area (ms)|
 	|   v  | consonant velocity of the rear fixed area |
-
 	
-### Others
+### Other Notes
     
-* Input files are not required to be sampled at 44100Hz
-* You can also specify a consonant velocity of the rear fixed area in the form of "front/back" for the fourth argument. But it makes little sense if UTAU does not support it itself.
-* You can also specify the rear fixed length in the form of "front/back" in the fixed length of the eighth argument. But it makes little sense if UTAU does not support it itself.
+* Input files are no longer required to be sampled at 44100Hz
+* You can also specify a consonant velocity of the rear fixed area in the form of "front/back" for the fourth argument. UTAU itself does not currently support this.
+* You can also specify the rear fixed length in the form of "front/back" in the fixed length of the eighth argument. UTAU itself does not currently support this.
+
+Previously, if a file format other than `.wav` is found in `oto.ini`, UTAU will append `.wav` to the file name like this:
+:	`aaa.mp3` → `aaa.mp3.wav`<br>
+
+Now, with environment variables set, Doppelter is able to read files in their original format.
+
+!!! info "I'd like to use Doppelter with other file formats!"
+	You need LAME, FLAC and Ogg decoders for this. See [tools](/ResamplerDocs/tools/#encoders) for information on setup.
  
-### System PATH variables
-
-* If the path of lame.exe is defined in the environment variable "lamepath", MP3 files can be read.
-* If the path of flac.exe is defined in the the environment variable "flacpath", FLAC files can be read.
-* If the path of oggdec.exe is defined in the environment variable "oggpath", OGG files can be read.
-
-Previously, if a file format other than ".wav" has been specified in oto.ini, UTAU will append ".wav" to the file name (so aaa.mp3 becomes aaa.mp3.wav) and forward it to the engine.
-
-* Instead, Doppeltter treats ".mp3.wav", ".flac.wav" and ".ogg.wav" as ".mp3", ".flac" and ".ogg".
