@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://Lauren042.github.io/ResamplerDocs/flags/">
+        <link rel="canonical" href="https://Lauren042.github.io/ResamplerDocs/tn_fnds/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
       
-        <title>resampler.exe - Resampler Flags</title>
+        <title>tn_fnds.exe - Resampler Flags</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#resampler-flags" class="md-skip">
+        <a href="#tn_fndsexe" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              resampler.exe
+              tn_fnds.exe
             
           </span>
         </div>
@@ -235,21 +235,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../flags/" class="md-nav__link">
         resampler.exe
       </a>
-      
     </li>
   
 
@@ -290,11 +280,21 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../tn_fnds/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         tn_fnds.exe
       </a>
+      
     </li>
   
 
@@ -312,14 +312,13 @@
               
                 
 
-<h1 id="resampler-flags">Resampler Flags</h1>
+<h1 id="tn_fndsexe">tn_fnds.exe</h1>
 <blockquote>
-<p>resampler.exe is the default resampler made by Ameya that comes with UTAU.</p>
+<p>tn_fnds.exe is made by Zteer and based off the EFB-GW and world4utau. Morise and Ameya/Ayame are both thanked in the readme.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>- Taken directly from https://utau-bowl.tumblr.com/post/647016314853097472/utau-flag-guide .
-- Need to check how accurate this is (range values for t?) and word better (explain filters).
-- Also find whatever names people use most for each flag to explain what they are.
-</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standard flags</label><label for="__tabbed_1_2">Unique flags</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <table>
 <thead>
 <tr>
@@ -332,109 +331,11 @@
 </thead>
 <tbody>
 <tr>
-<td align="center">a</td>
-<td></td>
-<td></td>
-<td align="center">100</td>
-<td>Stretches or compresses the consonant part of a sample.</td>
-</tr>
-<tr>
-<td align="center">b</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">0</td>
-<td>Applies breathiness after synthesis. Is not affected by other flags (such as F)</td>
-</tr>
-<tr>
-<td align="center">B</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">50</td>
-<td>Applies breathiness before synthesis, and is affected by other flags.</td>
-</tr>
-<tr>
-<td align="center">c</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">50</td>
-<td>Sets value of C flag before formant filter adaptation.</td>
-</tr>
-<tr>
-<td align="center">C</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">0</td>
-<td>High pass filter</td>
-</tr>
-<tr>
-<td align="center">D</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">0</td>
-<td>Mid pass filter</td>
-</tr>
-<tr>
-<td align="center">E</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">0</td>
-<td>Low pass filter</td>
-</tr>
-<tr>
-<td align="center">F</td>
-<td>Formant strength</td>
-<td></td>
-<td align="center">3</td>
-<td>I think it can go up to 5 or so, beyond that it all starts to give similar results</td>
-</tr>
-<tr>
 <td align="center">g</td>
 <td>Gender</td>
-<td><code>[-100-100]</code></td>
+<td><code>[-100, 100]</code></td>
 <td align="center">0</td>
 <td>Positive values will deepen the voice, while negative ones will make it higher.</td>
-</tr>
-<tr>
-<td align="center">G</td>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td>Forces resampler to render .frq files before playing. This makes the synthesis process slower, but gives you new frqs.</td>
-</tr>
-<tr>
-<td align="center">H</td>
-<td></td>
-<td><code>[0-99]</code></td>
-<td align="center">0</td>
-<td>Emphasizes low tones, and cuts higher ones.</td>
-</tr>
-<tr>
-<td align="center">h</td>
-<td></td>
-<td><code>[0-99]</code></td>
-<td align="center">0</td>
-<td>Emphasizes higher tones, and cuts low ones.</td>
-</tr>
-<tr>
-<td align="center">L</td>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td>Sets a fixed frequency for F flag. Has no default value. Probably has the same limits as F flag.</td>
-</tr>
-<tr>
-<td align="center">N</td>
-<td>Formant on/off</td>
-<td></td>
-<td align="center"></td>
-<td>Turns the formant filter off.</td>
-</tr>
-<tr>
-<td align="center">P</td>
-<td>Peak compressor</td>
-<td><code>[0-100]</code></td>
-<td align="center">86</td>
-<td>Compresses the voice to make the volume more consistent.</td>
 </tr>
 <tr>
 <td align="center">t</td>
@@ -444,28 +345,67 @@
 <td>Shifts the pitch by a number of cents. 1 cent = 1/100th of a semitone.</td>
 </tr>
 <tr>
-<td align="center">W</td>
-<td></td>
+<td align="center">b</td>
+<td>Breath</td>
 <td></td>
 <td align="center"></td>
-<td>Produces a sharper and more metallic sounding voice. Flag is used by itself without a number added.</td>
+<td>This flag is different from the original, and emphasises consonants (voiceless part). b10 increases the emphasis by 5%, and b100 by 500%.</td>
 </tr>
 <tr>
-<td align="center">x</td>
-<td></td>
-<td><code>[-100-100]</code></td>
-<td align="center">0</td>
-<td>Affects a note depending on how the sample it takes from was recorded. Higher notes make the voice brighter, while low notes make the voice more muffled. Negative values affect the formant.</td>
+<td align="center">B</td>
+<td>BRE</td>
+<td><code>[50, 100]</code></td>
+<td align="center">50</td>
+<td>The breath component increases when the value is set to 50 or more; it does not change when the value is set to less than 50.</td>
 </tr>
 <tr>
-<td align="center">Y</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">100</td>
-<td>Controls the breathiness for the “vowel” part of a note.</td>
+<td align="center">W</td>
+<td>Death Growl</td>
+<td><code>[-1]</code><br><code>[50, 1000]</code></td>
+<td align="center"></td>
+<td>Works differently from the original W flag. Overwrites the result of F0 analysis with the specified frequency. If -1 is specified, the sound is treated as a silent. Adjust the value of 'freq avg' in the original sound profile as a basis.</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th align="center">Flag</th>
+<th>Name</th>
+<th>Range</th>
+<th align="center">Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">A</td>
+<td>Amplitude</td>
+<td><code>[0, 100]</code></td>
+<td align="center">0</td>
+<td>Changes the volume in accordance with pitch fluctuations. Recommended for careful use on vibrato parts.</td>
+</tr>
+<tr>
+<td align="center">O</td>
+<td></td>
+<td><code>[-100, 100]</code></td>
+<td align="center">0</td>
+<td>Changes the strength (brightness) of the voice. Positive values suppress low frequencies and amplify the high frequencies. Does not affect unvoiced parts.</td>
+</tr>
+<tr>
+<td align="center">e</td>
+<td>Stretch method</td>
+<td></td>
+<td align="center"></td>
+<td>Toggles the combined stretch+loop or stretch method.<br>By default, tn_fnds stretches AND loops <abbr title="The white section defined in the oto.ini labelling.">the stretched section of a note</abbr>. If this flag is invoked, the interval is instead stretched as-is with no looping - the behaviour of is most resamplers.<br>Normally the default tn_fnds behaviour sounds more natural, but if the loop cuts strangely using this flag may be easier than re-configuring a voice bank.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
               
             </article>
@@ -479,7 +419,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tools" rel="prev">
+        <a href="../moresampler/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Moresampler" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -488,26 +428,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Tools
+              Moresampler
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../doppelter/" class="md-footer__link md-footer__link--next" aria-label="Next: Doppelter" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Doppelter
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

@@ -31,8 +31,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700%7CIBM+Plex+Mono+—+Regular&display=fallback">
-        <style>:root{--md-text-font:"Merriweather";--md-code-font:"IBM Plex Mono — Regular"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CIBM+Plex+Mono+—+Regular&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"IBM Plex Mono — Regular"}</style>
       
     
     
@@ -237,21 +237,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../moresampler/" class="md-nav__link">
-        Moresampler
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../flags/" class="md-nav__link">
         resampler.exe
       </a>
@@ -301,15 +286,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#others" class="md-nav__link">
-    Others
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-path-variables" class="md-nav__link">
-    System PATH variables
+  <a href="#other-notes" class="md-nav__link">
+    Other Notes
   </a>
   
 </li>
@@ -318,6 +296,36 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moresampler/" class="md-nav__link">
+        Moresampler
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tn_fnds/" class="md-nav__link">
+        tn_fnds.exe
+      </a>
     </li>
   
 
@@ -336,14 +344,63 @@
                 
 
 <h1 id="doppelter">Doppelter</h1>
+<div class="highlight"><pre><span></span><code>-Some of this is translated with DeepL, and needs to be edited for clarity
+</code></pre></div>
 <blockquote>
-<p>Ameya has been building the original UTAU resampler from scratch.</p>
-<p>Doppleter is multi-thread and 64-bit compatible, and even utilises system PATH variables for audio decoders such as Ogg Vorbis or MP3.</p>
+<p>Ameya has been building the original UTAU resampler from scratch. <br>
+Doppelter is multi-threaded, 64-bit compatible, and can even handle file formats other than <code>.wav</code>.</p>
 </blockquote>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standard flags</label><label for="__tabbed_1_2">Unique flags</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>g, B, N, P, t  flags are supported,</p>
+<table>
+<thead>
+<tr>
+<th align="center">Flag</th>
+<th>Name</th>
+<th>Range</th>
+<th align="center">Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">g</td>
+<td>Gender</td>
+<td><code>[-100-100]</code></td>
+<td align="center">0</td>
+<td>Positive values will deepen the voice, while negative ones will make it higher.</td>
+</tr>
+<tr>
+<td align="center">B</td>
+<td></td>
+<td><code>[0-100]</code></td>
+<td align="center">50</td>
+<td>Applies breathiness before synthesis, and is affected by other flags.</td>
+</tr>
+<tr>
+<td align="center">N</td>
+<td>Formant on/off</td>
+<td></td>
+<td align="center"></td>
+<td>Toggles the formant filter on or off.</td>
+</tr>
+<tr>
+<td align="center">P</td>
+<td>Peak compressor</td>
+<td><code>[0-100]</code></td>
+<td align="center">86</td>
+<td>Compresses the voice to make the volume more consistent.</td>
+</tr>
+<tr>
+<td align="center">t</td>
+<td>Pitch</td>
+<td></td>
+<td align="center">0</td>
+<td>Shifts the pitch by a number of cents. 1 cent = 1/100th of a semitone.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="tabbed-block">
 <table>
@@ -379,22 +436,21 @@
 </div>
 </div>
 </div>
-<h3 id="others">Others</h3>
+<h3 id="other-notes">Other Notes</h3>
 <ul>
-<li>Input files are not required to be sampled at 44100Hz</li>
-<li>You can also specify a consonant velocity of the rear fixed area in the form of "front/back" for the fourth argument. But it makes little sense if UTAU does not support it itself.</li>
-<li>You can also specify the rear fixed length in the form of "front/back" in the fixed length of the eighth argument. But it makes little sense if UTAU does not support it itself.</li>
+<li>Input files are no longer required to be sampled at 44100Hz</li>
+<li>You can also specify a consonant velocity of the rear fixed area in the form of "front/back" for the fourth argument. UTAU itself does not currently support this.</li>
+<li>You can also specify the rear fixed length in the form of "front/back" in the fixed length of the eighth argument. UTAU itself does not currently support this.</li>
 </ul>
-<h3 id="system-path-variables">System PATH variables</h3>
-<ul>
-<li>If the path of lame.exe is defined in the environment variable "lamepath", MP3 files can be read.</li>
-<li>If the path of flac.exe is defined in the the environment variable "flacpath", FLAC files can be read.</li>
-<li>If the path of oggdec.exe is defined in the environment variable "oggpath", OGG files can be read.</li>
-</ul>
-<p>Previously, if a file format other than ".wav" has been specified in oto.ini, UTAU will append ".wav" to the file name (so aaa.mp3 becomes aaa.mp3.wav) and forward it to the engine.</p>
-<ul>
-<li>Instead, Doppeltter treats ".mp3.wav", ".flac.wav" and ".ogg.wav" as ".mp3", ".flac" and ".ogg".</li>
-</ul>
+<dl>
+<dt>Previously, if a file format other than <code>.wav</code> is found in <code>oto.ini</code>, UTAU will append <code>.wav</code> to the file name like this:</dt>
+<dd><code>aaa.mp3</code> → <code>aaa.mp3.wav</code><br></dd>
+</dl>
+<p>Now, with environment variables set, Doppelter is able to read files in their original format.</p>
+<div class="admonition info">
+<p class="admonition-title">I'd like to use Doppelter with other file formats!</p>
+<p>You need LAME, FLAC and Ogg decoders for this. See <a href="/ResamplerDocs/tools/#encoders">tools</a> for information on setup.</p>
+</div>
 
               
             </article>
@@ -422,6 +478,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="../moresampler/" class="md-footer__link md-footer__link--next" aria-label="Next: Moresampler" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Moresampler
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

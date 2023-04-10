@@ -2,27 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://Lauren042.github.io/ResamplerDocs/</loc>
-         <lastmod>2022-04-29</lastmod>
+         <lastmod>2023-04-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://Lauren042.github.io/ResamplerDocs/doppelter/</loc>
-         <lastmod>2022-04-29</lastmod>
+         <lastmod>2023-04-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://Lauren042.github.io/ResamplerDocs/flags/</loc>
-         <lastmod>2022-04-29</lastmod>
+         <lastmod>2023-04-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://Lauren042.github.io/ResamplerDocs/moresampler/</loc>
-         <lastmod>2022-04-29</lastmod>
+         <lastmod>2023-04-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://Lauren042.github.io/ResamplerDocs/tn_fnds/</loc>
+         <lastmod>2023-04-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://Lauren042.github.io/ResamplerDocs/tools/</loc>
-         <lastmod>2022-04-29</lastmod>
+         <lastmod>2023-04-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

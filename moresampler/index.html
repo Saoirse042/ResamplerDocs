@@ -31,8 +31,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700%7CIBM+Plex+Mono+—+Regular&display=fallback">
-        <style>:root{--md-text-font:"Merriweather";--md-code-font:"IBM Plex Mono — Regular"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CIBM+Plex+Mono+—+Regular&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"IBM Plex Mono — Regular"}</style>
       
     
     
@@ -235,6 +235,36 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../flags/" class="md-nav__link">
+        resampler.exe
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doppelter/" class="md-nav__link">
+        Doppelter
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -262,23 +292,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../flags/" class="md-nav__link">
-        resampler.exe
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../doppelter/" class="md-nav__link">
-        Doppelter
+      <a href="../tn_fnds/" class="md-nav__link">
+        tn_fnds.exe
       </a>
     </li>
   
@@ -299,29 +314,177 @@
 
 <h1 id="moresampler">Moresampler</h1>
 <blockquote>
-<p>This is sourced from the <a href="https://web.archive.org/web/20181006060008/https://web.engr.illinois.edu/~khua5/index.php/2016/04/07/the-complete-moresampler-tutorial/">archived</a> copy of the original site, as the University of Illinois seems to have taken down <em>all</em> student project web hosting.
-Which is the only reason why I'm not hosting this on Massey University servers.</p>
-<p>seriously. i was this close to doing the exact same thing im now trying to prevent. the siren song of free web hosting beckons us all.</p>
+<p>This is sourced from the <a href="https://web.archive.org/web/20181006060008/https://web.engr.illinois.edu/~khua5/index.php/2016/04/07/the-complete-moresampler-tutorial/">archived</a> copy of Kanru Hua's original site, as the University of Illinois seems to have taken down all <abbr title="I nearly hosted this on the Massey University servers...">student project web hosting</abbr>.</p>
 </blockquote>
-<p>The following is a list of standard resampler's flags supported by Moresampler, also including some of the flags compatible with tn_fnds resampler.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Shared flags</label><label for="__tabbed_1_2">Unique Flags</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The following is a list of standard resampler flags supported by Moresampler, also including some of the flags compatible with <a href="/ResamplerDocs/tn_fnds">tn_fnds</a>.</p>
 <table>
 <thead>
 <tr>
-<th>Flag</th>
+<th align="center">Flag</th>
+<th>Name</th>
 <th>Range</th>
-<th>Default</th>
+<th align="center">Default</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>g</td>
-<td>[-100, 100]</td>
-<td>0</td>
-<td>Alter the perceived gender of the voice. Positive: male; negative: female.</td>
+<td align="center">g</td>
+<td>Gender</td>
+<td><code>[-100, 100]</code></td>
+<td align="center">0</td>
+<td>Alters the perceived gender of the voice. Positive values are male; negative are female.</td>
+</tr>
+<tr>
+<td align="center">t</td>
+<td>Pitch</td>
+<td><code>[-1200, 1200]</code></td>
+<td align="center">0</td>
+<td>Shifts the pitch by a number of cents. 1 cent = 1/100th of a semitone.</td>
+</tr>
+<tr>
+<td align="center">P</td>
+<td>Compressor</td>
+<td><code>[0, 100]</code></td>
+<td align="center">86</td>
+<td>When set to 100, it normalizes the peak of the output waveform to half of its maximum level. When set to 0, it doesn't normalize the output at all.<br>For a number between 0 and 100, the degree of normalization is interpolated.<br>Only effective in moresampler when <code>synthesis-utau-style-normalization</code> is on.</td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td>Amplitude modulation</td>
+<td><code>[-100, 100]</code></td>
+<td align="center">0</td>
+<td>This flag modulates the amplitude in correlation with change of pitch. It could be helpful for creating realistic vibratos. The sign (positive or negative) controls the direction of such modulation. <br> The <abbr title="Right click the equation and select Zoom Trigger &gt; Zoom Once Now to be able to see it better">formula</abbr> for amplitude gain is <span class="arithmatex">\(2^{10^{-5}A\frac{d}{dt}c(t)}\)</span>, where <span class="arithmatex">\(c(t)\)</span> is a function mapping time (seconds) to pitch (cents).</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td>Unvoiced Loudness</td>
+<td><code>[-20, 100]</code></td>
+<td align="center">0</td>
+<td>Amplitude gain for unvoiced consonants. This flag amplifies or attenuates unvoiced consonants (e.g. /t/, /k/, /s/) by a factor of 0.05 times the number after b. It has less or no effect for voiced consonants (e.g. /g/, /m/).</td>
+</tr>
+<tr>
+<td align="center">e</td>
+<td>Loop extension method</td>
+<td>None</td>
+<td align="center">None</td>
+<td>Force resampler to extend sustained vowels by stretching (time scaling), as opposed to looping. Opposte to moresampler's Me , which forces looping instead. <br>By default, the duration extension method is specified by the <code>synthesis-duration-extension-method</code> option.</td>
+</tr>
+<tr>
+<td align="center">u</td>
+<td>Export without effects</td>
+<td>None</td>
+<td align="center">None</td>
+<td>Send input directly to output without any processing (such as pitch shifting, time scaling or timbre adjustment). This flag is useful for adding sound effects, for example, breathing sound to the project because you may not want them to be pitch-shifted. This flag is equivalent to a less-known feature in UTAU: adding <code>$direct=true</code> to the note settings.</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="tabbed-block">
+<p>The following flags are unique to Moresampler:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Flag</th>
+<th>Name</th>
+<th>Range</th>
+<th align="center">Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Mt</td>
+<td>Tension</td>
+<td><code>[-100, 100]</code></td>
+<td align="center">0</td>
+<td>The extent to which the vocal folds are stressed or relaxed. Positive values correspond to tenser voice quality and vice versa.</td>
+</tr>
+<tr>
+<td align="center">Mb</td>
+<td>Breathiness</td>
+<td><code>[-100, 100]</code></td>
+<td align="center">0</td>
+<td>Positive values correspond to a breathier voice and negative values reduce the breath noise. When set to 100, the voice becomes a whisper.</td>
+</tr>
+<tr>
+<td align="center">Mo</td>
+<td>Openness</td>
+<td><code>[-100, 100]</code></td>
+<td align="center">0</td>
+<td>The degree of jaw opening during phonation. Positive values correspond to wide opening and vice versa.</td>
+</tr>
+<tr>
+<td align="center">Mr</td>
+<td>Resonance</td>
+<td><code>[-100, 100]</code></td>
+<td align="center">0</td>
+<td>This flag creates a "singer's formant" around 3kHz if set to positive; otherwise it reduces the formant.</td>
+</tr>
+<tr>
+<td align="center">Md</td>
+<td>Dryness</td>
+<td><code>[-100, 100]</code></td>
+<td align="center">0</td>
+<td>The degree of amplitude modulation received by breathing noise due to the periodicity of glottal air flow. The effect of this flag is very subtle and mostly takes place in high frequency band (usually above 6kHz).</td>
+</tr>
+<tr>
+<td align="center">MC</td>
+<td>Coarseness</td>
+<td><code>[0, 100]</code></td>
+<td align="center">0</td>
+<td>Adds a roar-like noise to the voice.</td>
+</tr>
+<tr>
+<td align="center">MG</td>
+<td>Growl</td>
+<td><code>[0, 100]</code></td>
+<td align="center">0</td>
+<td>Its name is self-explanatory.</td>
+</tr>
+<tr>
+<td align="center">MD</td>
+<td>Distortion</td>
+<td><code>[0, 100]</code></td>
+<td align="center">0</td>
+<td>An effect similar to growl but vibrates faster.</td>
+</tr>
+<tr>
+<td align="center">Ms</td>
+<td>Stabilization</td>
+<td><code>[0, 10]</code> (Integer)</td>
+<td align="center">0</td>
+<td>Fixing the occasional 'pops' that mostly occurs when shifting down the pitch. It is basically a runtime version of "analysis-anti-distortion" with adjustable degree of stabilization (higher number corresponds to stronger stabilization). This flag is recommended when popping only occasionally occurs, otherwise turn on analysis-anti-distortion instead.</td>
+</tr>
+<tr>
+<td align="center">Mm</td>
+<td>Model interpolation</td>
+<td><code>[0, 100]</code></td>
+<td align="center">100</td>
+<td>Interpolating between the classical speech model used before version 0.3.0 and the novel model used since then. By default Moresampler uses the new model (Mm100).</td>
+</tr>
+<tr>
+<td align="center">ME</td>
+<td>Formant emphasis</td>
+<td><code>[-100, 100]</code></td>
+<td align="center">0</td>
+<td>Given positive values, it emphasizes the formants; given negative values, the voice becomes fuzzy.</td>
+</tr>
+<tr>
+<td align="center">Me</td>
+<td>Force looping</td>
+<td>None</td>
+<td align="center">None</td>
+<td>The opposite of the basic 'e' flag.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
               
             </article>
@@ -335,7 +498,7 @@ Which is the only reason why I'm not hosting this on Massey University servers.<
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tools" rel="prev">
+        <a href="../doppelter/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Doppelter" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -344,20 +507,20 @@ Which is the only reason why I'm not hosting this on Massey University servers.<
               <span class="md-footer__direction">
                 Previous
               </span>
-              Tools
+              Doppelter
             </div>
           </div>
         </a>
       
       
         
-        <a href="../flags/" class="md-footer__link md-footer__link--next" aria-label="Next: resampler.exe" rel="next">
+        <a href="../tn_fnds/" class="md-footer__link md-footer__link--next" aria-label="Next: tn_fnds.exe" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              resampler.exe
+              tn_fnds.exe
             </div>
           </div>
           <div class="md-footer__button md-icon">

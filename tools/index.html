@@ -31,8 +31,8 @@
       
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700%7CIBM+Plex+Mono+—+Regular&display=fallback">
-        <style>:root{--md-text-font:"Merriweather";--md-code-font:"IBM Plex Mono — Regular"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CIBM+Plex+Mono+—+Regular&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"IBM Plex Mono — Regular"}</style>
       
     
     
@@ -263,6 +263,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fftw" class="md-nav__link">
+    FFTW
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-envrionment-variables" class="md-nav__link">
+    System Envrionment Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#editors" class="md-nav__link">
     Editors
   </a>
@@ -273,21 +287,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../moresampler/" class="md-nav__link">
-        Moresampler
-      </a>
     </li>
   
 
@@ -322,6 +321,36 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moresampler/" class="md-nav__link">
+        Moresampler
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tn_fnds/" class="md-nav__link">
+        tn_fnds.exe
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -337,24 +366,37 @@
 
 <h1 id="audio-tools">Audio Tools</h1>
 <h2 id="encoders">Encoders</h2>
-<p>When resamplers need audio encoders such as <a href="https://lame.sourceforge.io/index.php">LAME</a> or <a href="https://ffmpeg.org/">FFmpeg</a>, you most likely want the binaries (installers) rather than the source code for the compilers.</p>
-<p>A number of different LAME builds are avaliable, but mine are from <a href="http://aegiscorp.free.fr/lame/">here</a>.
-For Windows, FFmpeg builds are avaliable from Gyan Doshi <a href="https://www.gyan.dev/ffmpeg/builds/">here</a>.</p>
-<blockquote>
-<p>Linux users, check the docs of your distro, you may already have both.</p>
-</blockquote>
+<p>Some resamplers need audio libraries such as <a href="https://lame.sourceforge.io/index.php">LAME</a> or <a href="https://xiph.org/flac/">FLAC</a>.</p>
+<div class="admonition help">
+<p class="admonition-title">But this is annoying! If these encoders are so important, why aren't they just bundled with software?</p>
+<p>The short answer is conflicting types of open license and patent restrictions. Sorry! All anyone can do is link them and explain the installation.</p>
+</div>
+<p>A number of different LAME builds are avaliable, but mine (for Windows or OSX) are from <a href="http://aegiscorp.free.fr/lame/">here</a>. <br>
+The FLAC binaries I'm using are from <a href="https://xiph.org/flac/download.html">Xiph</a>.</p>
+<p>The Windows <a href="https://ffmpeg.org/">FFmpeg</a> essentials package from <a href="https://www.gyan.dev/ffmpeg/builds/#release-builds">gyan.dev</a> includes both <code>libmp3lame</code> and <code>libvorbis</code> so can make installation easier.
+It also has <code>avisynth+</code> for video editing, so it's genuinely worth installing and setting these up for future use.</p>
+<div class="admonition info">
+<p class="admonition-title">But what about Linux?</p>
+<p>It's quite likely there'll be a package for your specific distribution. You should check that documentation instead of this one :P</p>
+</div>
+<h2 id="fftw">FFTW</h2>
+<p>Some older resamplers based off WORLD need the <a href="http://www.fftw.org/download.html">Fastest Fourier Transform in the West</a> package.</p>
+<h2 id="system-envrionment-variables">System Envrionment Variables</h2>
+<p><a href="https://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them">Here</a> is a detailed explanation on setting system environment variables on Windows.</p>
+<ul>
+<li>Set <code>lame.exe</code> at <code>lamepath</code></li>
+<li>Set <code>flac.exe</code> at <code>flacpath</code></li>
+<li>Set <code>oggdec.exe</code> at <code>oggpath</code></li>
+</ul>
 <h2 id="editors">Editors</h2>
-<p><a href="https://www.audacityteam.org/">Audacity</a> is free, cross platform and open source. It's fast and it works.
-<a href="https://www.reaper.fm/">Reaper</a> is WinRAR free, cross platform and has a learning curve, but is extremely powerful and has more functionality than Audacity.</p>
-<p>Tanta Ausoniae; adfata <strong>tantum satiantur agendum</strong> ante rapiuntque tectoque
-conorque. Et colit <em>et</em> vestros hic locum torpor volucris! Fabula relinquunt
-anni diripuit retemptantem nisi Bacchi per velut domos pavor praeter illa. Ubi
-mori celer sculpsit, parva Alpino fratres afuerunt reperta servavit similis.</p>
-<p>Demunt nivea, in amento umbras. Promunturiumque velata tibi; diu sentit facit
-factum iura spiritus super sumptis et verrit. Enim salutem caeli; peto, ventique
-tu tanta victor obsequitur agros, <em>cogit</em> montano at morsu resecat memini. Fert
-remotis copia; contigit Hippolytum Haemum forti ego sed, tu <strong>una</strong> palmis
-honore inclinatoque feri distinxit <em>fugat</em> Calydonia.</p>
+<ul>
+<li>
+<p><a href="https://www.audacityteam.org/">Audacity</a> is free, cross platform and open source. It's fast and it works.</p>
+</li>
+<li>
+<p><a href="https://www.reaper.fm/">Reaper</a> is WinRAR free, cross platform and has a learning curve, but is extremely powerful and has more functionality than Audacity.</p>
+</li>
+</ul>
 
               
             </article>
@@ -384,13 +426,13 @@ honore inclinatoque feri distinxit <em>fugat</em> Calydonia.</p>
       
       
         
-        <a href="../moresampler/" class="md-footer__link md-footer__link--next" aria-label="Next: Moresampler" rel="next">
+        <a href="../flags/" class="md-footer__link md-footer__link--next" aria-label="Next: resampler.exe" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Moresampler
+              resampler.exe
             </div>
           </div>
           <div class="md-footer__button md-icon">
