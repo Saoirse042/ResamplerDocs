@@ -7,7 +7,7 @@
 
 
 
-=== "Standard flags"
+=== "Shared flags"
 	| Flag | Name             | Range      | Default | Description                                                                    |
 	|:----:|------------------|------------|:-------:|--------------------------------------------------------------------------------|
 	| g    | Gender           |`[-100-100]`| 0       | Positive values will deepen the voice, while negative ones will make it higher.|
@@ -33,7 +33,7 @@
 	Now, with environment variables set, Doppeltler is able to read files in their original format. See [tools](/ResamplerDocs/tools) for setting up encoders and environment variables.
 	
 ### Other Notes
-    
+
 * Input files are no longer required to be sampled at 44100Hz
 * You can also set a consonant velocity of the rear fixed area in the form of "front/back" for the i argument. UTAU itself does not currently support this.
 * You can also set the rear fixed length in the form of "front/back" in the fixed length of the v argument. UTAU itself does not currently support this.
