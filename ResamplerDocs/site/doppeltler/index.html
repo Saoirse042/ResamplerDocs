@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://Lauren042.github.io/ResamplerDocs/flags/">
+        <link rel="canonical" href="https://Lauren042.github.io/ResamplerDocs/doppeltler/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
       
-        <title>resampler.exe - Resampler Flags</title>
+        <title>Doppeltler - Resampler Flags</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#resampler-flags" class="md-skip">
+        <a href="#doppeltler" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              resampler.exe
+              Doppeltler
             
           </span>
         </div>
@@ -235,21 +235,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../flags/" class="md-nav__link">
         resampler.exe
       </a>
-      
     </li>
   
 
@@ -275,11 +265,52 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../doppeltler/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Doppeltler
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Doppeltler
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#other-notes" class="md-nav__link">
+    Other Notes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -417,14 +448,16 @@
               
                 
 
-<h1 id="resampler-flags">Resampler Flags</h1>
-<blockquote>
-<p>resampler.exe is the default resampler made by Ameya that comes with UTAU.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><code>- Taken directly from https://utau-bowl.tumblr.com/post/647016314853097472/utau-flag-guide .
-- Need to check how accurate this is (range values for t?) and word better (explain filters).
-- Also find whatever names people use most for each flag to explain what they are.
+<h1 id="doppeltler">Doppeltler</h1>
+<div class="highlight"><pre><span></span><code>-Some of this is translated with DeepL, and needs to be edited for clarity
 </code></pre></div>
+<blockquote>
+<p>Ameya has been building the original UTAU resampler from scratch. <br>
+Doppeltler is multi-threaded, 64-bit compatible, and can even handle file formats other than <code>.wav</code>.</p>
+</blockquote>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standard flags</label><label for="__tabbed_1_2">Unique flags</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <table>
 <thead>
 <tr>
@@ -437,18 +470,11 @@
 </thead>
 <tbody>
 <tr>
-<td align="center">a</td>
-<td></td>
-<td></td>
-<td align="center">100</td>
-<td>Stretches or compresses the consonant part of a sample.</td>
-</tr>
-<tr>
-<td align="center">b</td>
-<td></td>
-<td><code>[0-100]</code></td>
+<td align="center">g</td>
+<td>Gender</td>
+<td><code>[-100-100]</code></td>
 <td align="center">0</td>
-<td>Applies breathiness after synthesis. Is not affected by other flags (such as F)</td>
+<td>Positive values will deepen the voice, while negative ones will make it higher.</td>
 </tr>
 <tr>
 <td align="center">B</td>
@@ -458,81 +484,11 @@
 <td>Applies breathiness before synthesis, and is affected by other flags.</td>
 </tr>
 <tr>
-<td align="center">c</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">50</td>
-<td>Sets value of C flag before formant filter adaptation.</td>
-</tr>
-<tr>
-<td align="center">C</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">0</td>
-<td>High pass filter</td>
-</tr>
-<tr>
-<td align="center">D</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">0</td>
-<td>Mid pass filter</td>
-</tr>
-<tr>
-<td align="center">E</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">0</td>
-<td>Low pass filter</td>
-</tr>
-<tr>
-<td align="center">F</td>
-<td>Formant strength</td>
-<td></td>
-<td align="center">3</td>
-<td>I think it can go up to 5 or so, beyond that it all starts to give similar results</td>
-</tr>
-<tr>
-<td align="center">g</td>
-<td>Gender</td>
-<td><code>[-100-100]</code></td>
-<td align="center">0</td>
-<td>Positive values will deepen the voice, while negative ones will make it higher.</td>
-</tr>
-<tr>
-<td align="center">G</td>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td>Forces resampler to render .frq files before playing. This makes the synthesis process slower, but gives you new frqs.</td>
-</tr>
-<tr>
-<td align="center">H</td>
-<td></td>
-<td><code>[0-99]</code></td>
-<td align="center">0</td>
-<td>Emphasizes low tones, and cuts higher ones.</td>
-</tr>
-<tr>
-<td align="center">h</td>
-<td></td>
-<td><code>[0-99]</code></td>
-<td align="center">0</td>
-<td>Emphasizes higher tones, and cuts low ones.</td>
-</tr>
-<tr>
-<td align="center">L</td>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td>Sets a fixed frequency for F flag. Has no default value. Probably has the same limits as F flag.</td>
-</tr>
-<tr>
 <td align="center">N</td>
 <td>Formant on/off</td>
 <td></td>
 <td align="center"></td>
-<td>Turns the formant filter off.</td>
+<td>Toggles the formant filter on or off.</td>
 </tr>
 <tr>
 <td align="center">P</td>
@@ -548,29 +504,57 @@
 <td align="center">0</td>
 <td>Shifts the pitch by a number of cents. 1 cent = 1/100th of a semitone.</td>
 </tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
 <tr>
-<td align="center">W</td>
-<td></td>
-<td></td>
-<td align="center"></td>
-<td>Produces a sharper and more metallic sounding voice. Flag is used by itself without a number added.</td>
+<th align="center">Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">A</td>
+<td>High frequency emphasis rate of the noise component (default setting a100)</td>
 </tr>
 <tr>
-<td align="center">x</td>
-<td></td>
-<td><code>[-100-100]</code></td>
-<td align="center">0</td>
-<td>Affects a note depending on how the sample it takes from was recorded. Higher notes make the voice brighter, while low notes make the voice more muffled. Negative values affect the formant.</td>
+<td align="center">R</td>
+<td>Backwards. reverse front and back</td>
 </tr>
 <tr>
-<td align="center">Y</td>
-<td></td>
-<td><code>[0-100]</code></td>
-<td align="center">100</td>
-<td>Controls the breathiness for the “vowel” part of a note.</td>
+<td align="center">S</td>
+<td>Number of threads By default, the number of threads corresponds to the number of logical cores on the computer.</td>
+</tr>
+<tr>
+<td align="center">i</td>
+<td>length of the rear fixed area (ms)</td>
+</tr>
+<tr>
+<td align="center">v</td>
+<td>consonant velocity of the rear fixed area</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">File formats</p>
+<dl>
+<dt>Previously, if a file format other than <code>.wav</code> is found in <code>oto.ini</code>, <a href="/ResamplerDocs/resampler.exe">resampler</a> would append <code>.wav</code> to the file name like this:</dt>
+<dd><code>aaa.mp3</code> → <code>aaa.mp3.wav</code><br></dd>
+</dl>
+<p>Now, with environment variables set, Doppeltler is able to read files in their original format. See <a href="/ResamplerDocs/tools">tools</a> for setting up encoders and environment variables.</p>
+</div>
+<h3 id="other-notes">Other Notes</h3>
+<ul>
+<li>Input files are no longer required to be sampled at 44100Hz</li>
+<li>You can also set a consonant velocity of the rear fixed area in the form of "front/back" for the i argument. UTAU itself does not currently support this.</li>
+<li>You can also set the rear fixed length in the form of "front/back" in the fixed length of the v argument. UTAU itself does not currently support this.</li>
+</ul>
 
               
             </article>
@@ -584,7 +568,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tools" rel="prev">
+        <a href="../flags/" class="md-footer__link md-footer__link--prev" aria-label="Previous: resampler.exe" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -593,20 +577,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Tools
+              resampler.exe
             </div>
           </div>
         </a>
       
       
         
-        <a href="../doppeltler/" class="md-footer__link md-footer__link--next" aria-label="Next: Doppeltler" rel="next">
+        <a href="../moresampler/" class="md-footer__link md-footer__link--next" aria-label="Next: Moresampler" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Doppeltler
+              Moresampler
             </div>
           </div>
           <div class="md-footer__button md-icon">

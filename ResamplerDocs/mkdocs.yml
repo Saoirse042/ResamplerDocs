@@ -5,10 +5,16 @@ nav:
     - About: index.md
     - Tools: tools.md
     - resampler.exe: flags.md
-    - Doppelter: doppelter.md
+    - bkh01: bkh01.md
+    - Doppeltler: doppeltler.md
+    - f2resamp: f2resamp.md
+    - fresamp: fresamp.md
     - Moresampler: moresampler.md
+    - phaavoco: phaavoco.md
+    - TIPS: TIPS.md
     - tn_fnds.exe: tn_fnds.md
-
+    - WORLD4u: w4u.md
+    - WARP: kerchow.md
 
 theme:
     name: material
