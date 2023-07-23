@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://Lauren042.github.io/ResamplerDocs/doppelter/">
+        <link rel="canonical" href="https://Lauren042.github.io/ResamplerDocs/doppeltler/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
       
-        <title>Doppelter - Resampler Flags</title>
+        <title>Doppeltler - Resampler Flags</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#doppelter" class="md-skip">
+        <a href="#doppeltler" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Doppelter
+              Doppeltler
             
           </span>
         </div>
@@ -250,6 +250,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../bkh01.md" class="md-nav__link">
+        bkh01
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -262,12 +277,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Doppelter
+          Doppeltler
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Doppelter
+        Doppeltler
       </a>
       
         
@@ -308,8 +323,68 @@
   
   
     <li class="md-nav__item">
+      <a href="../f2resamp.md" class="md-nav__link">
+        f2resamp
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fresamp.md" class="md-nav__link">
+        fresamp
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../moresampler/" class="md-nav__link">
         Moresampler
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phaavoco.md" class="md-nav__link">
+        phaavoco
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TIPS.md" class="md-nav__link">
+        TIPS
       </a>
     </li>
   
@@ -330,6 +405,36 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../w4u.md" class="md-nav__link">
+        WORLD4u
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerchow.md" class="md-nav__link">
+        WARP
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -343,12 +448,12 @@
               
                 
 
-<h1 id="doppelter">Doppelter</h1>
+<h1 id="doppeltler">Doppeltler</h1>
 <div class="highlight"><pre><span></span><code>-Some of this is translated with DeepL, and needs to be edited for clarity
 </code></pre></div>
 <blockquote>
 <p>Ameya has been building the original UTAU resampler from scratch. <br>
-Doppelter is multi-threaded, 64-bit compatible, and can even handle file formats other than <code>.wav</code>.</p>
+Doppeltler is multi-threaded, 64-bit compatible, and can even handle file formats other than <code>.wav</code>.</p>
 </blockquote>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standard flags</label><label for="__tabbed_1_2">Unique flags</label></div>
 <div class="tabbed-content">
@@ -436,21 +541,20 @@ Doppelter is multi-threaded, 64-bit compatible, and can even handle file formats
 </div>
 </div>
 </div>
+<div class="admonition info">
+<p class="admonition-title">File formats</p>
+<dl>
+<dt>Previously, if a file format other than <code>.wav</code> is found in <code>oto.ini</code>, <a href="/ResamplerDocs/resampler.exe">resampler</a> would append <code>.wav</code> to the file name like this:</dt>
+<dd><code>aaa.mp3</code> → <code>aaa.mp3.wav</code><br></dd>
+</dl>
+<p>Now, with environment variables set, Doppeltler is able to read files in their original format. See <a href="/ResamplerDocs/tools">tools</a> for setting up encoders and environment variables.</p>
+</div>
 <h3 id="other-notes">Other Notes</h3>
 <ul>
 <li>Input files are no longer required to be sampled at 44100Hz</li>
-<li>You can also specify a consonant velocity of the rear fixed area in the form of "front/back" for the fourth argument. UTAU itself does not currently support this.</li>
-<li>You can also specify the rear fixed length in the form of "front/back" in the fixed length of the eighth argument. UTAU itself does not currently support this.</li>
+<li>You can also set a consonant velocity of the rear fixed area in the form of "front/back" for the i argument. UTAU itself does not currently support this.</li>
+<li>You can also set the rear fixed length in the form of "front/back" in the fixed length of the v argument. UTAU itself does not currently support this.</li>
 </ul>
-<dl>
-<dt>Previously, if a file format other than <code>.wav</code> is found in <code>oto.ini</code>, UTAU will append <code>.wav</code> to the file name like this:</dt>
-<dd><code>aaa.mp3</code> → <code>aaa.mp3.wav</code><br></dd>
-</dl>
-<p>Now, with environment variables set, Doppelter is able to read files in their original format.</p>
-<div class="admonition info">
-<p class="admonition-title">I'd like to use Doppelter with other file formats!</p>
-<p>You need LAME, FLAC and Ogg decoders for this. See <a href="/ResamplerDocs/tools/#encoders">tools</a> for information on setup.</p>
-</div>
 
               
             </article>
